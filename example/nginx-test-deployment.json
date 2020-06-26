@@ -1,0 +1,31 @@
+{
+    "apiVersion": "apps/v1",
+    "kind": "Deployment",
+    "metadata": {
+        "name": "nginx-test"
+    },
+
+    "spec": {
+        "selector": {
+            "matchLabels": {
+                "app": "nginx-test"
+            }
+        },
+        "replicas": 1,
+        "template": {
+            "metadata": {
+                "labels": {
+                    "app": "nginx-test"
+                }
+            },
+            "spec": {
+                "containers": [
+                    {
+                        "image": "127.0.0.1:5000/seldonio/nginx_test",
+                        "name": "nginx-test"
+                    }
+                ]
+            }
+        }
+    }
+}
